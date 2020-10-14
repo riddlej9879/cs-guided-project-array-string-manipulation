@@ -23,3 +23,25 @@ There is no index that satisfies the conditions in the problem statement.
 def pivot_index(nums):
     # Your code here
 
+    # First solution O(n^2)
+    # for i in range(len(nums)):
+    #     left = sum(nums[0:i])
+    #     right = sum(nums[i+1:])
+    #
+    #     print(left, right)
+    #     if left == right:
+    #         return i
+
+    # index = len(nums) // 2
+    left = sum(nums[0:(len(nums) // 2)])
+    right = sum(nums[(len(nums) // 2) + 1:])
+
+    if left == right:
+        return len(nums) // 2
+
+    return -1
+
+
+print(pivot_index([1, 7, 3, 6, 5, 6]))
+print(pivot_index([1, 2, 3]))
+
